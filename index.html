@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>CRUD App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div class="back">
+            <div class="title">
+                <h1>CRUD App</h1>
+                <h3>To-Do List:</h3>
+            </div>
+
+            <div class="form">
+                <form action="javascript:void(0);" method="POST" onsubmit="app.Add()">
+                <input type="text" id="add-to-do" placeholder="Things To-Do">
+                <input type="submit" value="Add" class="btn btn-primary">
+                </form>
+                <p id="counter"></p>
+                <table>
+                    <tr class="to-do">
+                        <th><h3>To-Do:</h3></th>
+                    <tbody id="tasks">
+                    </tbody>
+                </tr>
+                </table>
+            </div>
+
+            <div id="edit-box" role="aria-hidden">
+                <form action="javascript:void(0);" method="POST" id="save-edit">
+                    <input type="text" id="edit-to-do">
+                    <input type="submit" value="Save" class="btn btn-success">
+                    <a onclick="CloseInput()" aria-label="Close">&#10006;</a>
+                </form>
+            </div>
+        </div>
+        <script src="script/script.js" async defer></script>
+    </body>
+</html>
