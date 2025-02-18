@@ -18,9 +18,9 @@ class AuthService
         $user = User::where('email', $credentials['email'])->first();
 
         if(!$user || !Hash::check($credentials['password'], $user->password)){
-            return handleError(null, 'Invalid Credentials.');
+        return handleError(null, 'Invalid Credentials.');
         } else {
-            $token = $user->createToken($request->email)->plainTextToken;
+            $token = $user->createToken($user->id)->plainTextToken;
             return handleSuccess($token, 'Login Success');
         }
     }
